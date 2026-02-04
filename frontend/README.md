@@ -1,13 +1,13 @@
 # Frontend project 
-********
+
 
 This guide is for frontend LabQueue project.
 
 ## Table of contents 
-********
+
 
 ## Project structure
-********
+
 
 ### Overview summary
 Full version wiil be sooner...
@@ -51,4 +51,8 @@ Full version wiil be sooner...
 - tsconfig.json
 ```
 
-### To start project `npm start`
+### To start project 
+
+```bash
+npm start
+```
