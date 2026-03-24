@@ -26,8 +26,8 @@ Full version wiil be sooner...
             - forms/
             - illustrations/
             - inputs/
-            - sliders
-            - ui
+            - sliders/
+            - ui/
         - pages/
         - popups/
         - sections/

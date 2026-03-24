@@ -1,10 +1,16 @@
-import Header from './react/components/ui/header/Header';
+import { BrowserRouter } from 'react-router-dom';
 import './styles/global.scss';
+import { AppRoutes } from './react/router/AppRoutes';
+import { AuthProvider } from './react/context/AuthContext';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <AuthProvider>
+        <BrowserRouter>
+          <AppRoutes /> 
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
