@@ -1,0 +1,8 @@
+@use "../../../../styles/_mixins"  as *;
+@use "../../../../styles/_variables"  as *;
+
+header{
+    @include flexbox();
+
+    @include padding(16, 12, 16 ,12);
+}
