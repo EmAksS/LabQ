@@ -6,7 +6,7 @@ import './DashboardLayout.scss';
 
 export default function DashboardLayout (){
      return (
-     <>
+     <div className="main">
         <Header />
 
         <div className="mainLayout">
@@ -15,5 +15,5 @@ export default function DashboardLayout (){
                 <Outlet />
             </main>
         </div>
-    </>
+    </div>
 )}

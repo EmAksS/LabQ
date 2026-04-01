@@ -4,3 +4,23 @@
 @use "__variables" as *;
 @use "__mixins" as *;
 @use "__reset" as *;
+
+html,
+body{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    @include flexbox();
+}
+
+#root,
+.App{
+    @include flexbox();
+    flex-grow: 1;
+}
+
+.content{
+    @include padding(24, 32, 24 ,32)
+}

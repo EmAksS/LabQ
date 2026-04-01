@@ -5,4 +5,7 @@ header{
     @include flexbox();
 
     @include padding(16, 12, 16 ,12);
+
+    background: $platinum;
+    width: 100%;
 }
