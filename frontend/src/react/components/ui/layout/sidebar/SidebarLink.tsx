@@ -1,3 +1,4 @@
+import "./SidebarLink.scss";
 import { NavLink } from "react-router-dom";
 
 interface SidebarLinkProps {

@@ -14,19 +14,18 @@ body{
 body{
     @include flexbox();
     color: $black;
+    font-family: 'DMSans', sans-serif;
 }
 
 #root,
-.App{
+.App,
+.content{
     @include flexbox();
     flex-grow: 1;
 }
 
 .content{
-    @include flexbox();
     @include padding(24, 24, 24, 24);
-
-    flex-grow: 1;
 }
 
 .flex{

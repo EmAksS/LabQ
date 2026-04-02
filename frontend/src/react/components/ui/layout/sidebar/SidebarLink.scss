@@ -1,0 +1,27 @@
+@use '../../../../../styles/_mixins' as *;
+@use '../../../../../styles/_variables' as *;
+
+.link{
+    @include flexbox();
+    @include padding(12, 8, 12, 8);
+    @include borderRadius(8);
+
+    @include width(256);
+
+    transition: background-color 0.25s $bezier--base,
+                color 0.25s $bezier--base;
+
+    &:hover{
+        background-color: color-mix(in srgb, rgb(136, 22, 32) 10%, transparent);
+        color: $berry;
+    }
+
+    &:active{
+        background-color: color-mix(in srgb, rgb(136, 22, 32) 20%, transparent);
+    }
+
+    &--active{
+        background-color: color-mix(in srgb, rgb(136, 22, 32) 15%, transparent);
+        color: $berry !important;
+    }
+}
