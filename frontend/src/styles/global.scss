@@ -13,6 +13,7 @@ body{
 
 body{
     @include flexbox();
+    color: $black;
 }
 
 #root,
@@ -22,5 +23,20 @@ body{
 }
 
 .content{
-    @include padding(24, 32, 24 ,32)
+    @include flexbox();
+    @include padding(24, 24, 24, 24);
+
+    flex-grow: 1;
+}
+
+.flex{
+    @include flexbox();
+
+    &--space{
+        justify-content: space-between;
+    }
+}
+
+main{
+    flex-grow: 1;
 }

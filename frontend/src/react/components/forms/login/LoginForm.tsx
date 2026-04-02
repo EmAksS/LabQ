@@ -1,4 +1,4 @@
-import { LoginButton } from "../../inputs/buttons/LoginButton";
+import { LoginButton } from "../../controls/buttons/LoginButton";
 
 export const LoginForm = () => {
     return (

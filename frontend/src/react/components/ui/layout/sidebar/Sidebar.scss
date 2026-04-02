@@ -1,0 +1,22 @@
+@use '../../../../../styles/_mixins' as *;
+@use '../../../../../styles/_variables' as *;
+
+.sidebar{
+    @include flexbox();
+
+    background: $platinum;
+
+    border-right: adaptive(1) solid $platinum--border;
+    
+
+    .content{
+        flex-grow: 1;
+    }
+
+    ul{
+        @include flexbox();
+        @include gap(4);
+
+        flex-direction: column;
+    }
+}

@@ -1,12 +1,12 @@
 import {Routes, Route, Navigate} from "react-router-dom";
 import { ProtectedRoute } from "../components/containers/routes/ProtectedRoute";
 import { PublicRoute } from "../components/containers/routes/PublicRoute";
-import { LoginPage } from "../pages/login/LoginPage";
-import { RegisterPage } from "../pages/register/RegisterPage";
+import { LoginPage } from "../pages/auth/login/LoginPage";
+import { RegisterPage } from "../pages/auth/register/RegisterPage";
 import DashboardLayout from "../components/containers/layout/dashboardLayout/DashboardLayout";
-import MainPage from "../pages/dashboard/mainPage/MainPage";
-import QueuePage from "../pages/dashboard/queuePage/QueuePage";
-import CreatePage from "../pages/dashboard/createPage/CreatePage";
+import MainPage from "../pages/dashboard/main/MainPage";
+import QueuePage from "../pages/dashboard/queue/QueuePage";
+import CreatePage from "../pages/dashboard/create/CreatePage";
 
 
 
