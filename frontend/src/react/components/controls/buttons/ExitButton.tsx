@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../scripts/hooks/useAuth";
+import URLS from "../../../../constants/urls";
 
 export const ExitButton = () => {
     const { logout } = useAuth();
@@ -7,7 +8,7 @@ export const ExitButton = () => {
 
     const exitHandle = () => {
         logout();
-        navigate("/login", { replace: true });
+        navigate(URLS.AUTH, { replace: true });
     }
 
     return (

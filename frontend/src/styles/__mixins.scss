@@ -163,11 +163,14 @@
 
 // Универсальный адаптивный clamp
 @function adaptive($val) {
-  @return clamp(
-    calc(#{$val}px * var(--coefficient)),
-    calc(#{$val} * 100vw / var(--design-width) * var(--mobile-coefficient)),
-    calc(#{$val}px * var(--mobile-coefficient))
-  );
+  $sign: if($val < 0, -1, 1); // сохраняем знак
+  $abs-val: abs($val);
+
+  @return calc($sign * clamp(
+    calc(#{$abs-val}px * var(--coefficient)),
+    calc(#{$abs-val} * 100vw / var(--design-width) * var(--mobile-coefficient)),
+    calc(#{$abs-val}px * var(--mobile-coefficient))
+  ));
 }
 
 

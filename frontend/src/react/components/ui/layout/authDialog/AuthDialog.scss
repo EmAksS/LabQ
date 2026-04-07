@@ -1,0 +1,57 @@
+@use '../../../../../styles/_mixins' as *;
+@use '../../../../../styles/_variables' as *;
+
+.dialog {
+    @include flexbox();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: $white;
+
+    background: $berry;
+
+    &__container{
+        height: 60%;
+
+        > * {
+            height: 100%;
+        }
+    }
+}
+
+.greeting{
+    @include flexbox();
+    @include gap(32);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    
+    @include padding(8, 32, 8, 32);
+
+    &__title{
+        text-align: center;
+
+        @include fontSize(48);
+        font-weight: 300;
+    }
+
+    &__text{
+        @include fontSize(18);
+        opacity: 0.9;
+    }
+
+    &__hint{
+        text-align: center;
+
+        @include fontSize(12);
+        opacity: 0.6;
+
+        margin-top: auto;
+
+
+    }
+}

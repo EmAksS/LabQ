@@ -2,7 +2,8 @@ import { createContext, useMemo, useState } from "react";
 
 type AuthContextType = {
     isAuth: boolean;
-    login: (token: string) => void;
+    register: (token: string) => Promise<{success: boolean}>;
+    login: (token: string) => Promise<{success: boolean}>;
     logout: () => void;
 };
 
@@ -13,10 +14,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [isAuth, setIsAuth] = useState(
         Boolean(localStorage.getItem("token"))
     );
+    
+    const register = async (token: string) => {
+        try {
+            localStorage.setItem("token", token);
+            setIsAuth(true);
+            return { success: true };
+        } catch {
+            return { success: false };
+        }
+    };
 
-    const login = (token: string) => {
-        localStorage.setItem("token", token);
-        setIsAuth(true);
+    const login = async (token: string) => {
+        try {
+            localStorage.setItem("token", token);
+            setIsAuth(true);
+            return { success: true };
+        } catch {
+            return { success: false };
+        }
     };
 
     const logout = () => {
@@ -25,7 +41,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const value = useMemo(() => {
-        return { isAuth, login, logout };
+        return { isAuth, register, login, logout };
     }, [isAuth]);
 
     return (
