@@ -25,8 +25,16 @@ export const RegisterForm = () => {
     const isFormValid = isValidEmail(email) && isValidPassword(password);
 
     const handleRegister = async () => {
+
         if (isFormValid){
-            const res = await register("example");
+
+            const data = {
+                username: name,
+                email: email,
+                password: password,
+            };
+
+            const res = await register(data);
 
             if (res.success){
                 navigate(from, { replace: true });

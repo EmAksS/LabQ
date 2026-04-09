@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import './AuthDialog.scss';
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { AuthChangeButton } from '../../../controls/buttons/AuthChangeButton';
-import { AuthMode } from '../../../../../constants/types';
+import { AuthMode } from '../../../../../shared/common/types';
 import LoginGreeting from './authGreeting/LoginGreeting';
 import RegisterGreeting from './authGreeting/RegisterGreeting';
 
