@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
+    "@solidjs/router": "^0.16.2",
+    "axios": "^1.18.1",
+    "floating-ui-solid": "^1.0.63",
     "sass": "^1.101.7",
-    "solid-js": "^1.9.13"
+    "solid-js": "^1.9.13",
+    "solid-motionone": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",

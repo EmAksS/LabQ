@@ -1,23 +1,30 @@
-import { createContext, useMemo, useState } from "react";
-import { registerRequest } from "../../scripts/backend/authorization";
-import { RegisterData } from "../../shared/auth/types";
+import type{
+    ParentProps
+} from "solid-js";
+
+import {
+    createContext,
+    createSignal
+} from "solid-js";
+
+import type { RegisterData } from "../../../types/auth.types";
+import { registerRequest } from "../scripts/api/auth.api";
 
 type AuthContextType = {
-    isAuth:  boolean;
-    register: (data: RegisterData) => Promise<{success: boolean}>;
-    login: (token: string) => Promise<{success: boolean}>;
+    isAuth: () => boolean;
+    register: ( data: RegisterData ) => Promise<{ success: boolean }>;
+    login: (token: string) => Promise<{ success: boolean }>;
     logout: () => void;
-};
+}
 
-export const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = createContext<AuthContextType>();
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-
-    const [isAuth, setIsAuth] = useState(
+export function AuthProvider(props: ParentProps) {
+    const [isAuth, setIsAuth] = createSignal(
         Boolean(localStorage.getItem("token"))
     );
-    
-    const register = async (data: RegisterData ) => {
+
+    const register = async (data: RegisterData) => {
         try {
             const res = await registerRequest(data);
             localStorage.setItem("token", "example");
@@ -59,13 +66,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsAuth(false);
     };
 
-    const value = useMemo(() => {
-        return { isAuth, register, login, logout };
-    }, [isAuth]);
+    const value: AuthContextType = {
+        isAuth,
+        register,
+        login,
+        logout
+    }
 
     return (
-        <AuthContext.Provider value={ value }>
-            {children}
+        <AuthContext.Provider value={value}>
+            {props.children}
         </AuthContext.Provider>
-    );
+    )
+
 }
