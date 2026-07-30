@@ -1,0 +1,22 @@
+@use "../../../../styles/_mixins" as *;
+@use "../../../../styles/_variables" as *;
+
+.popover{
+    display: inline;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &__content{
+        @include flexbox();
+        @include gap(4);
+        flex-direction: column;
+
+        @include padding(16, 24, 16, 24);
+
+        @include borderRadius(16);
+
+        background: $platinum;
+        border: adaptive(1) solid $black;
+        pointer-events: "auto", 
+    }
+}

@@ -1,12 +1,17 @@
-import '../../styles/global.scss';
+import { Router } from '@solidjs/router';
 import { AuthProvider } from '../features/auth/context/AuthContext';
+import { AppRoutes } from './router/AppRoutes';
+
+import '../../styles/global.scss';
 
 function App() {
 
   return (
     <div class='App'>
       <AuthProvider>
-        <h1>Привет мир!</h1>
+        <Router>
+          <AppRoutes />
+        </Router>
       </AuthProvider>
     </div>
   )

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.8.0",
+    "@kobalte/core": "^0.13.12",
     "@solidjs/router": "^0.16.2",
     "axios": "^1.18.1",
     "floating-ui-solid": "^1.0.63",

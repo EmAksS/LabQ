@@ -163,7 +163,7 @@
 
 // Универсальный адаптивный clamp
 @function adaptive($val) {
-  $sign: if($val < 0, -1, 1); // сохраняем знак
+  $sign: if(sass($val < 0): -1; else: 1); // сохраняем знак
   $abs-val: abs($val);
 
   @return calc($sign * clamp(
